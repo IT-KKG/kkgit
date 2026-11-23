@@ -1,7 +1,7 @@
 # KKG-IT
 
 Offisiell nettside for IT-avdelingen ved Kristiansand katedralskole Gimle – [kkgit.no](https://kkgit.no).
-Samler snarveier for elever: bytte passord, Visma InSchool, It's learning og utlånsregler for PC og lader.
+Samler snarveier for elever: bytte passord, Visma InSchool, itslearning og utlånsregler for PC og lader.
 
 ## Struktur
 
