@@ -1,15 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>KKG-IT | Hjem</title>
-        <link href="style/styles.css" rel="stylesheet" type="text/css">
+        <meta name="description" content="KKG-IT er samlesiden for alt du trenger som elev - passord, skoleplattformer og dokumenter.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="style/styles.css?v=2" rel="stylesheet">
     </head>
     <body>
-        <h1>KKG-IT</h1>
-        <h4>Her finner du alt du trenger om KKG It</h4>
-        <h8>Denne siden er under utvikling</h8>
-        <script src="js/script.js"></script>
+        <div class="wrap">
+            <div class="topline"></div>
+
+            <header class="head">
+                <a href="https://kkgit.no">
+                    <img class="logo" src="img/logo.png" alt="Kristiansand katedralskole Gimle">
+                </a>
+                <div>
+                    <div class="brand">IT-avdelingen</div>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" aria-current="page">Hjem</a>
+                    <a href="utlan.html">Utlån</a>
+                </nav>
+            </header>
+
+            <section class="hero">
+                <div class="lines"></div>
+                <div class="wedge"></div>
+                <div class="inner">
+                    <div class="kicker">IT-avdelingen ved KKG vgs</div>
+                    <h1>Alt du trenger om KKG IT</h1>
+                    <p>Passordbytte, Visma InSchool og utlån av PC — samlet på ett sted.</p>
+                </div>
+            </section>
+
+            <section class="links">
+                <div class="grid">
+                    <a class="tile t1" href="https://nyttpassord.ikt-agder.no/">
+                        <div class="tile-top">
+                            <span class="tile-num">01</span>
+                            <span class="tile-tag">Konto</span>
+                        </div>
+                        <h2>Bytt passord</h2>
+                        <p>Tilbakestill skolepassordet ditt til edu-brukeren.</p>
+                        <span class="tile-go" aria-hidden="true">Gå til →</span>
+                    </a>
+
+                    <a class="tile t2" href="https://kristiansand-katedralskole.inschool.visma.no/Login.jsp#/">
+                        <div class="tile-top">
+                            <span class="tile-num">02</span>
+                            <span class="tile-tag">Visma</span>
+                        </div>
+                        <h2>Visma InSchool</h2>
+                        <p>Timeplan, fravær og vurderinger.</p>
+                        <span class="tile-go" aria-hidden="true">Gå til →</span>
+                    </a>
+
+                    <a class="tile t3" href="https://agder.itslearning.com/">
+                        <div class="tile-top">
+                            <span class="tile-num">03</span>
+                            <span class="tile-tag">It's learning</span>
+                        </div>
+                        <h2>It's learning</h2>
+                        <p>Tilgang til It's learning-plattformen.</p>
+                        <span class="tile-go" aria-hidden="true">Gå til →</span>
+                    </a>
+                    <a class="tile t4" href="utlan.html">
+                        <div class="tile-top">
+                            <span class="tile-num">04</span>
+                            <span class="tile-tag">Utlån</span>
+                        </div>
+                        <h2>Lån PC og lader</h2>
+                        <p>Les reglene for utlån av PC og lader.</p>
+                        <span class="tile-go" aria-hidden="true">Les reglene →</span>
+                    </a>
+                </div>
+            </section>
+
+            <footer class="foot">
+                <p>Finner du ikke det du leter etter? Ta kontakt med IT-avdelingen.</p>
+                <p class="foot-small">KKG-IT · Kristiansand katedralskole Gimle</p>
+            </footer>
+        </div>
     </body>
 </html>
