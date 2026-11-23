@@ -1,30 +1,41 @@
-/* ---------- Grunnoppsett ---------- */
+/* ---------- Farger og grunnoppsett ---------- */
+:root {
+    --red: #E01F1D;
+    --gold: #EBD6A3;
+    --blue-dark: #352D86;
+    --blue-light: #00A9DA;
+    --green-dark: #00695A;
+    --yellow: #FAC800;
+    --rust: #9F3A14;
+    --grey-light: #ECEAE6;
+    --grey-dark: #5B4E47;
+    --ink: #1d1d1b;
+    --white: #fff;
+
+    --gutter: max(48px, calc((100% - 1200px) / 2));
+}
+
 * {
     box-sizing: border-box;
 }
 
-:root {
-    --gutter: max(48px, calc((100% - 1200px) / 2));
-}
-
 body {
     margin: 0;
-    background: #fff;
+    background: var(--white);
     font-family: 'Rubik', Arial, sans-serif;
-    color: #1d1d1b;
+    color: var(--ink);
 }
 
 a {
-    color: #352D86;
+    color: var(--blue-dark);
 }
 
 a:hover {
-    color: #00A9DA;
+    color: var(--blue-light);
 }
 
-a:focus-visible,
-.tile:focus-visible {
-    outline: 2px solid #352D86;
+a:focus-visible {
+    outline: 2px solid var(--blue-dark);
     outline-offset: 2px;
 }
 
@@ -36,7 +47,7 @@ a:focus-visible,
 
 .topline {
     height: 8px;
-    background: #E01F1D;
+    background: var(--red);
 }
 
 /* ---------- Header ---------- */
@@ -48,48 +59,97 @@ a:focus-visible,
 }
 
 .logo {
+    display: block;
     height: 56px;
     width: auto;
-    display: block;
 }
 
 .brand {
-    font: 600 21px/1.1 'Rubik', Arial, sans-serif;
-}
-
-.dept {
-    font: 400 14px/1.2 'Rubik', Arial, sans-serif;
-    color: #5B4E47;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.1;
 }
 
 .nav {
-    margin-left: auto;
     display: flex;
     gap: 28px;
-    font: 500 16px/1 'Rubik', Arial, sans-serif;
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
 }
 
 .nav a {
-    color: #5B4E47;
-    text-decoration: none;
     padding: 8px 0;
+    color: var(--grey-dark);
+    text-decoration: none;
 }
 
-.nav a:hover {
-    color: #1d1d1b;
+.nav a:hover,
+.nav a[aria-current=page] {
+    color: var(--ink);
 }
 
 .nav a[aria-current=page] {
-    color: #1d1d1b;
-    border-bottom: 2px solid #E01F1D;
+    border-bottom: 2px solid var(--red);
+}
+
+/* ---------- Åpningstider ---------- */
+.hours {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    padding: 18px var(--gutter);
+    background: var(--yellow);
+    color: var(--ink);
+    border-block: 3px solid var(--ink);
+}
+
+.hours-label {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.hours-time {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hours-status {
+    margin-left: auto;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: var(--red);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.hours-status::before {
+    content: "●";
+    margin-right: 8px;
+}
+
+.hours-status:empty {
+    display: none;
+}
+
+.hours-status.is-open {
+    background: var(--green-dark);
 }
 
 /* ---------- Hero ---------- */
 .hero {
     position: relative;
-    background: #352D86;
-    padding: 72px var(--gutter) 120px;
     overflow: hidden;
+    padding: 72px var(--gutter) 120px;
+    background: var(--blue-dark);
 }
 
 .hero .lines {
@@ -98,18 +158,16 @@ a:focus-visible,
     background-image:
         repeating-linear-gradient(45deg, rgba(255, 255, 255, .14) 0 1px, transparent 1px 16px),
         repeating-linear-gradient(-45deg, rgba(255, 255, 255, .14) 0 1px, transparent 1px 16px);
-    background-size: 50% 100%, 50% 100%;
+    background-size: 50% 100%;
     background-position: left, right;
     background-repeat: no-repeat;
 }
 
 .hero .wedge {
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    inset: 0 0 0 auto;
     width: 34%;
-    background: #00A9DA;
+    background: var(--blue-light);
     clip-path: polygon(38% 0, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -119,33 +177,38 @@ a:focus-visible,
 }
 
 .kicker {
-    font: 500 13px/1 'Rubik', Arial, sans-serif;
+    margin-bottom: 18px;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: #EBD6A3;
-    margin-bottom: 18px;
 }
 
 .hero h1 {
-    font: 600 60px/1.05 'Rubik', Arial, sans-serif;
-    color: #fff;
     margin: 0 0 16px;
+    color: var(--white);
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.05;
     letter-spacing: -.015em;
 }
 
 .hero p {
-    font: 400 19px/1.5 'Rubik', Arial, sans-serif;
-    color: rgba(255, 255, 255, .85);
-    margin: 0;
     max-width: 520px;
+    margin: 0;
+    color: rgba(255, 255, 255, .85);
+    font-size: 19px;
+    line-height: 1.5;
     text-wrap: pretty;
 }
 
 /* ---------- Snarveier (fliser) ---------- */
 .links {
     flex: 1;
-    background: #ECEAE6;
     padding: 24px var(--gutter) 64px;
+    background: var(--grey-light);
 }
 
 .links:not(.doc) {
@@ -153,19 +216,20 @@ a:focus-visible,
 }
 
 .grid {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    position: relative;
     margin-top: -56px;
 }
 
 .tile {
     display: flex;
     flex-direction: column;
-    text-decoration: none;
-    background: #fff;
     padding: 32px 30px 28px;
+    background: var(--white);
+    border-left: 6px solid var(--accent);
+    text-decoration: none;
     box-shadow: 0 2px 4px rgba(29, 29, 27, .06), 0 12px 28px -14px rgba(53, 45, 134, .35);
     transition: transform .18s, box-shadow .18s;
 }
@@ -175,6 +239,11 @@ a:focus-visible,
     box-shadow: 0 4px 8px rgba(29, 29, 27, .06), 0 22px 40px -16px rgba(53, 45, 134, .5);
 }
 
+/* Fargen på kanten og tallet til hver flis */
+.t1, .t4 { --accent: var(--blue-light); --accent-num: var(--blue-light); }
+.t2      { --accent: var(--yellow);     --accent-num: var(--rust); }
+.t3      { --accent: var(--red);        --accent-num: var(--red); }
+
 .tile-top {
     display: flex;
     align-items: baseline;
@@ -183,70 +252,48 @@ a:focus-visible,
 }
 
 .tile-num {
-    font: 600 44px/1 'Rubik', Arial, sans-serif;
+    color: var(--accent-num);
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1;
 }
 
 .tile-tag {
-    font: 500 12px/1 'Rubik', Arial, sans-serif;
+    color: var(--grey-dark);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
     letter-spacing: .1em;
     text-transform: uppercase;
-    color: #5B4E47;
 }
 
 .tile h2 {
-    font: 600 27px/1.1 'Rubik', Arial, sans-serif;
-    color: #1d1d1b;
     margin: 0;
+    color: var(--ink);
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1.1;
 }
 
 .tile p {
-    font: 400 16px/1.5 'Rubik', Arial, sans-serif;
-    color: #5B4E47;
     margin: 8px 0 0;
+    color: var(--grey-dark);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .tile-go {
     margin-top: auto;
     padding-top: 24px;
-    font: 500 14px/1 'Rubik', Arial, sans-serif;
-    color: #352D86;
+    color: var(--blue-dark);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
     transition: transform .18s;
 }
 
 .tile:hover .tile-go {
     transform: translateX(4px);
-}
-
-.t1 {
-    border-left: 6px solid #00A9DA;
-}
-
-.t1 .tile-num {
-    color: #00A9DA;
-}
-
-.t2 {
-    border-left: 6px solid #FAC800;
-}
-
-.t2 .tile-num {
-    color: #9F3A14;
-}
-
-.t3 {
-    border-left: 6px solid #E01F1D;
-}
-
-.t3 .tile-num {
-    color: #E01F1D;
-}
-
-.t4 {
-    border-left: 6px solid #00A9DA;
-}
-
-.t4 .tile-num {
-    color: #00A9DA;
 }
 
 /* ---------- Utlån (PDF-side) ---------- */
@@ -266,8 +313,10 @@ a:focus-visible,
 }
 
 .doc-bar h1 {
-    font: 600 32px/1.1 'Rubik', Arial, sans-serif;
     margin: 0;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.1;
 }
 
 .doc-actions {
@@ -279,51 +328,52 @@ a:focus-visible,
 .btn {
     display: inline-block;
     padding: 12px 20px;
-    background: #352D86;
-    color: #fff;
+    background: var(--blue-dark);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
     text-decoration: none;
-    font: 500 15px/1 'Rubik', Arial, sans-serif;
 }
 
 .btn:hover {
-    background: #00A9DA;
-    color: #fff;
+    background: var(--blue-light);
+    color: var(--white);
 }
 
 .btn--ghost {
-    background: #fff;
-    color: #352D86;
-    border: 2px solid #352D86;
     padding: 10px 18px;
+    background: var(--white);
+    color: var(--blue-dark);
+    border: 2px solid var(--blue-dark);
 }
 
 .btn--ghost:hover {
-    background: #352D86;
-    color: #fff;
+    background: var(--blue-dark);
 }
 
 .pdf {
     flex: 1;
     width: 100%;
     min-height: 75vh;
+    background: var(--white);
     border: 0;
-    background: #fff;
-    border-left: 6px solid #FAC800;
+    border-left: 6px solid var(--yellow);
 }
 
 .pdf-fallback {
-    padding: 32px 30px;
     margin: 0;
+    padding: 32px 30px;
     font-size: 17px;
 }
 
 /* ---------- Footer ---------- */
 .foot {
     padding: 28px var(--gutter);
-    background: #1d1d1b;
+    background: var(--ink);
     color: rgba(255, 255, 255, .75);
     font-size: 15px;
-    border-top: 6px solid #E01F1D;
+    border-top: 6px solid var(--red);
 }
 
 .foot p {
@@ -332,8 +382,8 @@ a:focus-visible,
 
 .foot .foot-small {
     margin-top: 6px;
-    font-size: 13px;
     color: rgba(255, 255, 255, .45);
+    font-size: 13px;
 }
 
 /* ---------- Mobil ---------- */
@@ -347,8 +397,8 @@ a:focus-visible,
     }
 
     .nav {
-        margin-left: 0;
         width: 100%;
+        margin-left: 0;
         padding-top: 6px;
     }
 

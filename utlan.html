@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link href="style/styles.css?v=2" rel="stylesheet">
+        <link href="style/styles.css?v=4" rel="stylesheet">
     </head>
     <body>
         <div class="wrap">
@@ -27,6 +27,12 @@
                 </nav>
             </header>
 
+            <div class="hours">
+                <span class="hours-label">Åpningstider</span>
+                <strong class="hours-time">Mandag–fredag · 08:00–15:00</strong>
+                <span class="hours-status" id="hours-status"></span>
+            </div>
+
             <section class="links doc">
                 <div class="doc-bar">
                     <h1>Utlånsregler for PC og lader</h1>
@@ -44,5 +50,6 @@
                 </object>
             </section>
         </div>
+        <script src="js/apningstider.js"></script>
     </body>
 </html>
